@@ -7,7 +7,7 @@ import theme from './theme';
 
 import './main.css';
 
-const Theme = (props) => (
+const Theme = ({ children }) => (
   <React.Fragment>
     <Helmet>
       <meta
@@ -18,8 +18,9 @@ const Theme = (props) => (
     <ThemeProvider theme={theme}>
       {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
       <CssBaseline />
+
       <div className="AppContainer">
-        {props.children}
+        {children}
       </div>
     </ThemeProvider>
   </React.Fragment>
