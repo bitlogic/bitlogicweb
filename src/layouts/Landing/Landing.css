@@ -1,0 +1,12 @@
+.Landing__Container {
+  max-width: 100vw;
+  min-height: 100vh;
+}
+
+.Landing__Navbar .Navbar:not(.Navbar--full) .Navbar__Logo {
+  display: none;
+}
+
+.Landing__Navbar .Navbar:not(.Navbar--full) .Navbar__MenuContainer {
+  margin: 0 auto;
+}

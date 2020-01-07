@@ -1,0 +1,60 @@
+.AppContainer .Navbar__Container {
+  background: transparent;
+}
+
+.Navbar__MenuList {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.Navbar__MenuList .Navbar__MenuList__Item {
+  display: block;
+  margin: 0 2px;
+  padding: 0;
+}
+
+.Navbar__MenuList .Navbar__MenuList__Item a {
+  display: block;
+  margin: 0;
+  padding: 10px 20px;
+  color: #FFF;
+  text-decoration: none;
+}
+
+.Navbar__Container > div {
+  display: flex;
+  padding: 0 20px;
+}
+
+.Navbar__Container > div > *:not(:first-child) {
+  margin-left: auto;
+}
+
+.Navbar__Container .Navbar__Logo img {
+  margin: 0;
+  min-width: 152px;;
+}
+
+.Navbar__Container .Navbar__MenuContainer {
+  display: none;
+}
+
+.Navbar__Container .Navbar__MenuButton {
+  display: block;
+}
+
+@media (min-width: 992px) {
+  .Navbar__Container .Navbar__MenuContainer {
+    display: block;
+  }
+
+  .Navbar__Container .Navbar__MenuButton {
+    display: none;
+  }
+
+  .Navbar__Container > div {
+    display: flex;
+    padding: 0 15%;
+  }
+}
