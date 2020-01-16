@@ -46,7 +46,7 @@ const Navbar = () => {
   );
 
   return (
-    <AppBar position="fixed" color="default" className={containerClassNames} elevation={0}>
+    <AppBar position="fixed" color="default" className={containerClassNames} elevation={trigger ? 1 : 0}>
       <Toolbar>
         <div className="Navbar__Logo">
           <img src={bitlogicLogo} alt="Bitlogic" />

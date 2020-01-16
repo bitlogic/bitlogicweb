@@ -1,0 +1,94 @@
+.Home__Content > div {
+  position: relative;
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+.Home__Content .Banner__Container {
+  min-height: calc(100vh - 56px);
+}
+
+.Home__Content .Banner__Container img {
+  margin: auto;
+}
+
+.Home__Content .AboutUs__Container {
+  min-height: 50vh;
+  background: white;
+}
+
+.Home__Content .AboutUs__Container img {
+  margin: 20px 0 20px auto;
+  object-fit: contain;
+}
+
+.Home__Content .AboutUs__Content {
+  position: relative;
+}
+
+.Home__Content .AboutUs__Text {
+  margin: 0 auto;
+  font-size: 2.5rem;
+  line-height: 2.4rem;
+  color: #2A2C2E;
+  font-weight: bolder;
+  max-width: 900px;
+}
+
+.Home__Content .AboutUs__Link {
+  text-align: right;
+  margin: 30px 0 30px auto;
+}
+
+.Home__Content .Home__Link {
+  position: relative;
+  transform-style: preserve-3d;
+  display: inline-flex;
+  z-index: 1;
+  color: #74C8D2;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+  padding: 10px 15px;
+}
+
+.Home__Content .Home__Link::after {
+  position: absolute;
+  content: '';
+  background: #74C8D2;
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transition: rigth 0.3s ease-in-out, width 0.2s ease-in-out;
+  transform: translateZ(-1px);
+}
+
+.Home__Content .Home__Link:hover::after ,
+.Home__Content .Home__Link:focus::after {
+  width: 100%;
+}
+
+.Home__Content .Home__Link:hover,
+.Home__Content .Home__Link:focus {
+  color: #2A2C2E;
+}
+
+@media (min-width: 992px) {
+  .Home__Content > div {
+    padding: 0 15%;
+  }
+
+  .Home__Content .AboutUs__Container img {
+    right: calc(15% + 20px);
+  }
+}

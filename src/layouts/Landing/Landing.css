@@ -3,10 +3,22 @@
   min-height: 100vh;
 }
 
-.Landing__Navbar .Navbar:not(.Navbar--full) .Navbar__Logo {
-  display: none;
-}
+@media (min-width: 992px) {
+  .Landing__Navbar .Navbar .Navbar__Logo {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+  }
 
-.Landing__Navbar .Navbar:not(.Navbar--full) .Navbar__MenuContainer {
-  margin: 0 auto;
+  .Landing__Navbar .Navbar.Navbar--full .Navbar__Logo {
+    width: auto;
+    height: auto;
+    opacity: 1;
+  }
+  
+  .Landing__Navbar .Navbar:not(.Navbar--full) .Navbar__MenuContainer {
+    margin: 0 auto;
+  }
 }

@@ -5,8 +5,8 @@ import Navbar from '../../components/Navbar';
 
 import './Landing.css';
 
-const Landing = ({ children }) => (
-  <div className="Landing Landing__Container">
+const Landing = ({ children, className }) => (
+  <div className={`Landing Landing__Container ${className}`}>
     <div className="Landing__Navbar">
       <Navbar />
     </div>
@@ -20,6 +20,11 @@ const Landing = ({ children }) => (
 );
 
 Landing.propTypes = {
+  className: 'Landing__Default',
+};
+
+Landing.propTypes = {
+  className: PropTypes.string,
   children: PropTypes.node,
 };
 
