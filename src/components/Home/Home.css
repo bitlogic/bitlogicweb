@@ -68,11 +68,12 @@
 
 
 .Home__Content .Blog__Content {
+  width: 300px;
   max-width: 300px;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin: 20px 10px;
   display: inline-block;
+  border: 1px solid black;
+  position: relative;
 }
 
 .Home__Content .Blog__Content__Img img {
@@ -82,8 +83,6 @@
 }
 
 .Home__Content .Blog__Content__Text {
-  max-width: 300px;
-  border: 1px solid black;
   padding: 10px 20px;
   display: block;
 }
