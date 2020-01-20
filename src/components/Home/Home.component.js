@@ -3,6 +3,10 @@ import Landing from '../../layouts/Landing';
 import SEO from '../seo';
 import Banner from './Sections/Banner';
 import AboutUs from './Sections/AboutUs';
+import Services from './Sections/Services';
+import Culture from './Sections/Culture';
+import Projects from './Sections/Projects';
+import Blog from './Sections/Blog';
 
 import './Home.css';
 
@@ -13,6 +17,10 @@ const Home = () => (
     <div className="Home__Content">
       <Banner />
       <AboutUs />
+      <Services />
+      <Culture />
+      <Projects />
+      <Blog />
     </div>
   </Landing>
 );
