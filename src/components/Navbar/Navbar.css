@@ -10,7 +10,7 @@
 .Navbar__MenuList {
   margin: 0;
   padding: 0;
-  display: flex;
+  display: block;
 }
 
 .Navbar__MenuList .Navbar__MenuList__Item {
@@ -22,28 +22,40 @@
 .Navbar__MenuList .Navbar__MenuList__Item a {
   display: block;
   margin: 0;
-  padding: 10px 20px;
+  padding: 10px 17px;
   color: #FFF;
   text-decoration: none;
   text-transform: uppercase;
+  font-size: 14px;
 }
 
 .Navbar__Container > div {
-  display: flex;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 64px;
   padding: 0 20px;
 }
 
-.Navbar__Container > div > *:not(:first-child) {
+.Navbar__Container .Navbar__MenuButton {
   margin-left: auto;
 }
 
 .Navbar__Container .Navbar__Logo img {
   margin: 0;
-  min-width: 152px;;
+  max-width: 100%;
 }
 
 .Navbar__Container .Navbar__MenuContainer {
-  display: none;
+  margin: 0;
+  height: 0px;
+  overflow: hidden;
+  transition: all 0.25s ease-in-out;
+}
+
+.Navbar__Container .Navbar__MenuContainer.Navbar__MenuContainer--expanded {
+  height: 250px;
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
 
 .Navbar__Container .Navbar__MenuButton {
@@ -53,8 +65,17 @@
 }
 
 @media (min-width: 992px) {
+  .Navbar__MenuList {
+    display: flex;
+  }
+
   .Navbar__Container .Navbar__MenuContainer {
     display: block;
+    height: auto;
+  }
+
+  .Navbar__Container .Navbar__MenuContainer.Navbar__MenuContainer--expanded {
+    height: auto;
   }
 
   .Navbar__Container .Navbar__MenuButton {

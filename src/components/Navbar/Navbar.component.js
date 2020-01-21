@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
 import bitlogicLogo from '../../images/logo.png';
@@ -37,11 +37,23 @@ const MENU_ITEMS = [
 
 const Navbar = () => {
   const trigger = useScrollTrigger();
+  const [expanded, setExpanded] = useState(false);
+
+  const handleToggleExpand = () => {
+    setExpanded(prev => !prev);
+  };
 
   const containerClassNames = classnames(
     'Navbar Navbar__Container',
     {
       'Navbar--full': trigger,
+    },
+  );
+
+  const menuContainerClassNames = classnames(
+    'Navbar__MenuContainer',
+    {
+      'Navbar__MenuContainer--expanded': expanded,
     },
   );
 
@@ -51,8 +63,12 @@ const Navbar = () => {
         <div className="Navbar__Logo">
           <img src={bitlogicLogo} alt="Bitlogic" />
         </div>
+        
+        <IconButton edge="start" className="Navbar__MenuButton" color="inherit" aria-label="menu" onClick={handleToggleExpand}>
+          <MenuIcon />
+        </IconButton>
 
-        <div className="Navbar__MenuContainer">
+        <div className={menuContainerClassNames}>
           <ul className="Navbar__MenuList">
             {MENU_ITEMS.map(({ label, to }, i) => (
               <li key={i} className="Navbar__MenuList__Item">
@@ -62,9 +78,6 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <IconButton edge="start" className="Navbar__MenuButton" color="inherit" aria-label="menu">
-          <MenuIcon />
-        </IconButton>
       </Toolbar>
     </AppBar>
   );
