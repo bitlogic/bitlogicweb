@@ -1,0 +1,72 @@
+.ServicesPage__Container {
+  background-image: url('../../images/ondas-bg.png');
+  background-color: #2a2c2e;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+}
+
+.ServicesPage__Title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+  line-height: 40px;
+  text-align: left;
+  font-weight: 700;
+  margin-top: 250px;
+  margin-bottom: 80px;
+  padding: 0 20px;
+  color: #fff;
+}
+
+.ServicesPage__Content {
+  background: #ffffff;
+  padding: 120px 20px;
+  display: grid;
+}
+
+.Service {
+  font-family: 'Montserrat', sans-serif;
+  color: #2a2c2e;
+  padding: 50px 0;
+}
+
+.Service__Title {
+  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.Service__Description {
+  font-weight: 700;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.ServicesPage__Image {
+  text-align: center;
+  align-self: center;
+  color: #777777;
+}
+
+.ServicesPage__Image img {
+  margin: 0;
+}
+
+@media (min-width: 992px) {
+  .ServicesPage__Title {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+
+  .ServicesPage__Content {
+    padding-left: 15%;
+    padding-right: 15%;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ServicesPage__Image {
+    grid-column: 2;
+    grid-row: 1 / 4;
+  }
+}

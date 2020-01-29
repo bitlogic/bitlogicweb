@@ -1,10 +1,11 @@
 .AppContainer .Navbar__Container {
   background: transparent;
   transition: background 0.1s linear;
+  background: #222222;
 }
 
 .AppContainer .Navbar__Container.Navbar--full {
-  background: #2A2C2EAA;
+  background: #2a2c2eaa;
 }
 
 .Navbar__MenuList {
@@ -23,7 +24,7 @@
   display: block;
   margin: 0;
   padding: 10px 17px;
-  color: #FFF;
+  color: #fff;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 14px;
@@ -38,6 +39,10 @@
 
 .Navbar__Container .Navbar__MenuButton {
   margin-left: auto;
+}
+
+.Navbar__Container .Navbar__Logo {
+  cursor: pointer;
 }
 
 .Navbar__Container .Navbar__Logo img {

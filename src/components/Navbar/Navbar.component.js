@@ -15,7 +15,7 @@ const MENU_ITEMS = [
   },
   {
     label: 'Servicios',
-    to: '/',
+    to: '/services',
   },
   {
     label: 'Bitway',
@@ -40,31 +40,38 @@ const Navbar = () => {
   const [expanded, setExpanded] = useState(false);
 
   const handleToggleExpand = () => {
-    setExpanded(prev => !prev);
+    setExpanded((prev) => !prev);
   };
 
-  const containerClassNames = classnames(
-    'Navbar Navbar__Container',
-    {
-      'Navbar--full': trigger,
-    },
-  );
+  const containerClassNames = classnames('Navbar Navbar__Container', {
+    'Navbar--full': trigger,
+  });
 
-  const menuContainerClassNames = classnames(
-    'Navbar__MenuContainer',
-    {
-      'Navbar__MenuContainer--expanded': expanded,
-    },
-  );
+  const menuContainerClassNames = classnames('Navbar__MenuContainer', {
+    'Navbar__MenuContainer--expanded': expanded,
+  });
 
   return (
-    <AppBar position="fixed" color="default" className={containerClassNames} elevation={trigger ? 1 : 0}>
+    <AppBar
+      position="fixed"
+      color="default"
+      className={containerClassNames}
+      elevation={trigger ? 1 : 0}
+    >
       <Toolbar>
         <div className="Navbar__Logo">
-          <img src={bitlogicLogo} alt="Bitlogic" />
+          <Link to="/">
+            <img src={bitlogicLogo} alt="Bitlogic" />
+          </Link>
         </div>
-        
-        <IconButton edge="start" className="Navbar__MenuButton" color="inherit" aria-label="menu" onClick={handleToggleExpand}>
+
+        <IconButton
+          edge="start"
+          className="Navbar__MenuButton"
+          color="inherit"
+          aria-label="menu"
+          onClick={handleToggleExpand}
+        >
           <MenuIcon />
         </IconButton>
 
@@ -77,7 +84,6 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
-
       </Toolbar>
     </AppBar>
   );
