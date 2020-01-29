@@ -1,0 +1,13 @@
+.Social {
+  text-align: center;
+}
+
+.Social .Social__Item {
+  color: #cccccc;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  font-size: 25px;
+  padding-right: 25px;
+}

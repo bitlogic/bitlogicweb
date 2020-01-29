@@ -1,0 +1,24 @@
+.ContactData {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ContactData .ContactData__Item {
+  color: #fff;
+  line-height: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.ContactData .ContactData__Item span {
+  color: #74c8d2;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+@media (min-width: 992px) {
+  .ContactData .ContactData__Item {
+    display: inline-block;
+  }
+}

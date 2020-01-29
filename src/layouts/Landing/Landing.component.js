@@ -4,6 +4,7 @@ import { Toolbar } from '@material-ui/core';
 import Navbar from '../../components/Navbar';
 
 import './Landing.css';
+import Footer from '../../components/Footer';
 
 const Landing = ({ children, className }) => (
   <div className={`Landing Landing__Container ${className}`}>
@@ -13,8 +14,10 @@ const Landing = ({ children, className }) => (
 
     <Toolbar />
 
-    <div className="Landing__Content">
-      {children}
+    <div className="Landing__Content">{children}</div>
+
+    <div className="Landing__Navbar">
+      <Footer />
     </div>
   </div>
 );

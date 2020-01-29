@@ -1,0 +1,22 @@
+.Sitemap {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.Sitemap .Sitemap__Item {
+  line-height: 22px;
+}
+
+.Sitemap .Sitemap__Link {
+  color: #74c8d2;
+  line-height: 40px;
+  text-decoration: none;
+}
+
+@media (min-width: 992px) {
+  .Sitemap .Sitemap__Item {
+    display: inline-block;
+    margin: 0 5px 0 35px;
+  }
+}
