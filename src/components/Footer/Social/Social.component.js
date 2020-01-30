@@ -33,7 +33,7 @@ const Social = () => {
   return (
     <div className="Social">
       {SOCIAL_ITEMS.map(({ to, logo, prefix = 'fab' }, i) => (
-        <a href={to} target="_blank" className="Social__Item">
+        <a href={to} target="_blank" rel="noopener noreferrer" className="Social__Item">
           <FontAwesomeIcon icon={[prefix, logo]} />
         </a>
       ))}

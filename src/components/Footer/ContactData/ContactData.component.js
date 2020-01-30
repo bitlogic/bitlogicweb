@@ -2,7 +2,7 @@ import React from 'react';
 import './ContactData.css';
 
 const CONTACT_ITEMS = [
-  'Av. Fernando Fader 4412',
+  'Tristán Malbrán 4355',
   'Córdoba, Argentina',
   '+54 9 351 157 404 863',
 ];
