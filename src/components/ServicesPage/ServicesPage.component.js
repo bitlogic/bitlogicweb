@@ -1,5 +1,5 @@
 import React from 'react';
-import Landing from '../../layouts/Landing';
+import Default from '../../layouts/Default';
 import SEO from '../seo';
 import ServiceItem from './ServiceItem';
 import ServicesImage from '../../images/services_logo.png';
@@ -24,7 +24,7 @@ const SERVICES_ITEMS = [
 ];
 
 const ServicesPage = () => (
-  <Landing className="ServicesPage ServicesPage__Container">
+  <Default className="ServicesPage ServicesPage__Container">
     <SEO title="Services" />
 
     <h1 className="ServicesPage__Title">
@@ -42,7 +42,7 @@ const ServicesPage = () => (
         animación
       </div>
     </div>
-  </Landing>
+  </Default>
 );
 
 export default ServicesPage;

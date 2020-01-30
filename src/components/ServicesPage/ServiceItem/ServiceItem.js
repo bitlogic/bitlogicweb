@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import './ServiceItem.css';
 
 const ServiceItem = ({ title, children }) => (
@@ -8,5 +8,10 @@ const ServiceItem = ({ title, children }) => (
     <p className="ServiceItem__Description">{children}</p>
   </section>
 );
+
+ServiceItem.propTypes = {
+  title: PropTypes.string,
+  children: PropTypes.node,
+};
 
 export default ServiceItem;

@@ -1,0 +1,24 @@
+.Default__Container {
+  max-width: 100vw;
+  min-height: 100vh;
+}
+
+@media (min-width: 992px) {
+  .Default__Navbar .Navbar .Navbar__Logo {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+  }
+
+  .Default__Navbar .Navbar.Navbar--full .Navbar__Logo {
+    width: auto;
+    height: auto;
+    opacity: 1;
+  }
+
+  .Default__Navbar .Navbar:not(.Navbar--full) .Navbar__MenuContainer {
+    margin: 0 auto;
+  }
+}

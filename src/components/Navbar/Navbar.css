@@ -1,10 +1,6 @@
 .AppContainer .Navbar__Container {
   background: transparent;
   transition: background 0.1s linear;
-  background: #222222;
-}
-
-.AppContainer .Navbar__Container.Navbar--full {
   background: #2a2c2eaa;
 }
 
@@ -70,25 +66,44 @@
 }
 
 @media (min-width: 992px) {
-  .Navbar__MenuList {
-    display: flex;
-  }
-
   .Navbar__Container .Navbar__MenuContainer {
     display: block;
     height: auto;
+    text-align: right;
   }
 
-  .Navbar__Container .Navbar__MenuContainer.Navbar__MenuContainer--expanded {
-    height: auto;
+  .Navbar__MenuList {
+    display: inline-block;
   }
 
-  .Navbar__Container .Navbar__MenuButton {
+  .Navbar__MenuList .Navbar__MenuList__Item {
+    display: inline-block;
+  }
+
+  .Navbar__Logo {
     display: none;
   }
 
   .Navbar__Container > div {
     display: flex;
     padding: 0 15%;
+  }
+
+  .AppContainer .Navbar__Container.Navbar--full > div {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
+  .AppContainer .Navbar__Container.Navbar--full .Navbar__Logo {
+    display: block;
+  }
+
+  .Navbar__Container .Navbar__MenuContainer.Navbar__MenuContainer--expanded {
+    height: auto;
+    grid-column: 2;
+  }
+
+  .Navbar__Container .Navbar__MenuButton {
+    display: none;
   }
 }
