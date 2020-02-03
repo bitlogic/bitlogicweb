@@ -1,0 +1,76 @@
+.ContactPage__Container {
+  background-color: #74c8d2;
+}
+
+.ContactPage__Content {
+  background: #ffffff;
+  padding: 120px 20px;
+  display: grid;
+}
+
+.ContactPage__LeftContent {
+  grid-column: 1;
+  padding-right: 0;
+  margin-bottom: 35px;
+}
+
+.ContactPage__Title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 75px;
+  line-height: 80px;
+  font-weight: 800;
+  margin-top: 250px;
+  margin-bottom: 80px;
+  padding: 0 20px;
+  color: #2a2c2e;
+}
+
+.ContactPage__Subtitle {
+  font-family: "Montserrat", sans-serif;
+  font-size: 36px;
+  line-height: 40px;
+  font-weight: 700;
+  color: #2a2c2e;
+}
+
+.ContactPage__Description {
+  font-size: 18px;
+  color: #2a2c2e;
+  font-weight: 500;
+}
+
+.ContactPage__RightContent {
+  grid-row: 2;
+  grid-column: 1;
+}
+
+.ContactPage__RightContent .ContactPage__Input {
+  width: 100%;
+  margin-bottom: 15px;
+  color: #2a2c2e;
+}
+
+@media (min-width: 992px) {
+  .ContactPage__Title {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+
+  .ContactPage__Content {
+    padding-left: 15%;
+    padding-right: 15%;
+    grid-template-columns: auto 40%;
+  }
+
+  .ContactPage__LeftContent {
+    grid-row: 1;
+    grid-column: 2;
+    margin-bottom: 0;
+    padding-right: 30px;
+  }
+
+  .ContactPage__RightContent {
+    grid-row: 1;
+    grid-column: 3 / 5;
+  }
+}

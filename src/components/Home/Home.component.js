@@ -7,6 +7,7 @@ import Services from './Sections/Services';
 import Culture from './Sections/Culture';
 import Projects from './Sections/Projects';
 import Blog from './Sections/Blog';
+import Contact from './Sections/Contact'
 
 import './Home.css';
 
@@ -21,6 +22,7 @@ const Home = () => (
       <Culture />
       <Projects />
       <Blog />
+      <Contact />
     </div>
   </Landing>
 );
