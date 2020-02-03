@@ -27,7 +27,7 @@ const MENU_ITEMS = [
   },
   {
     label: 'Blog',
-    to: '/',
+    to: '/blog',
   },
   {
     label: 'Contacto',
@@ -36,7 +36,9 @@ const MENU_ITEMS = [
 ];
 
 const Navbar = () => {
-  const trigger = useScrollTrigger();
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+  });
   const [expanded, setExpanded] = useState(false);
 
   const handleToggleExpand = () => {
@@ -44,7 +46,7 @@ const Navbar = () => {
   };
 
   const containerClassNames = classnames('Navbar Navbar__Container', {
-    'Navbar--full': trigger,
+    'Navbar--full': window.scrollY && window.scrollY > 100,
   });
 
   const menuContainerClassNames = classnames('Navbar__MenuContainer', {

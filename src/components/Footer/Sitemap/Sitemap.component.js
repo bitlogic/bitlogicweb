@@ -21,7 +21,7 @@ const SITEMAP_ITEMS = [
   },
   {
     label: 'Blog',
-    to: '/',
+    to: '/blog',
   },
   {
     label: 'Contacto',
