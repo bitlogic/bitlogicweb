@@ -22,8 +22,6 @@ const AboutUsPage = () => (
       </div>
       <div className="AboutUsPage__Image">
         <img src={IsotipoBitlogic} alt="bitlogic" />
-        <br />
-        ANIMACION
       </div>
     </div>
   </Default>

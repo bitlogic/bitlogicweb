@@ -38,8 +38,6 @@ const ServicesPage = () => (
       ))}
       <div className="ServicesPage__Image">
         <img src={IsotipoBitlogic} alt="bitlogic" />
-        <br />
-        animación
       </div>
     </div>
   </Default>

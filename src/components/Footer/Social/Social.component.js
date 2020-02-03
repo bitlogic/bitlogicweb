@@ -10,16 +10,16 @@ const SOCIAL_ITEMS = [
     logo: 'twitter',
   },
   {
+    to: 'https://www.facebook.com/bitlogicos',
+    logo: 'facebook',
+  },
+  {
     to: 'https://www.instagram.com/bitlogic.io',
     logo: 'instagram',
   },
   {
     to: 'https://ar.linkedin.com/company/bitlogic.io',
     logo: 'linkedin-in',
-  },
-  {
-    to: '#',
-    logo: 'youtube',
   },
   {
     to: 'https://github.com/bitlogic',
