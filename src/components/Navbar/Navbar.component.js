@@ -31,7 +31,7 @@ const MENU_ITEMS = [
   },
   {
     label: 'Contacto',
-    to: '/',
+    to: '/contact',
   },
 ];
 
