@@ -11,7 +11,7 @@ import './Navbar.css';
 const MENU_ITEMS = [
   {
     label: 'Nosotros',
-    to: '/',
+    to: '/about-us',
   },
   {
     label: 'Servicios',

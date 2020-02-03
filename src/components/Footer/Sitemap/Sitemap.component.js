@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 const SITEMAP_ITEMS = [
   {
     label: 'Nosotros',
-    to: '/',
+    to: '/about-us',
   },
   {
     label: 'Servicios',

@@ -2,7 +2,7 @@ import React from 'react';
 import Default from '../../layouts/Default';
 import SEO from '../seo';
 import ServiceItem from './ServiceItem';
-import ServicesImage from '../../images/services_logo.png';
+import IsotipoBitlogic from '../../images/isotipo.png';
 import './ServicesPage.css';
 
 const SERVICES_ITEMS = [
@@ -37,7 +37,7 @@ const ServicesPage = () => (
         </ServiceItem>
       ))}
       <div className="ServicesPage__Image">
-        <img src={ServicesImage} alt="bitlogic" />
+        <img src={IsotipoBitlogic} alt="bitlogic" />
         <br />
         animación
       </div>

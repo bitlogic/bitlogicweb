@@ -1,12 +1,8 @@
-.ServicesPage__Container {
-  background-image: url('../../images/ondas-bg.png');
-  background-color: #2a2c2e;
-  background-attachment: fixed;
-  background-position: center center;
-  background-size: cover;
+.AboutUsPage__Container {
+  background-color: #74c8d2;
 }
 
-.ServicesPage__Title {
+.AboutUsPage__Title {
   font-family: 'Montserrat', sans-serif;
   font-size: 40px;
   line-height: 40px;
@@ -18,36 +14,40 @@
   color: #fff;
 }
 
-.ServicesPage__Content {
+.AboutUsPage__Content {
   background: #ffffff;
   padding: 120px 20px;
   display: grid;
 }
 
-.ServicesPage__Image {
+.AboutUsPage__Description {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  color: #2a2c2e;
+  font-weight: 500;
+  line-height: 35px;
+  margin-bottom: 1rem;
+}
+
+.AboutUsPage__Image {
   text-align: center;
   align-self: center;
   color: #777777;
 }
 
-.ServicesPage__Image img {
+.AboutUsPage__Image img {
   margin: 0;
 }
 
 @media (min-width: 992px) {
-  .ServicesPage__Title {
+  .AboutUsPage__Title {
     padding-left: 15%;
     padding-right: 15%;
   }
 
-  .ServicesPage__Content {
+  .AboutUsPage__Content {
     padding-left: 15%;
     padding-right: 15%;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .ServicesPage__Image {
-    grid-column: 2;
-    grid-row: 1 / 4;
+    grid-template-columns: auto 40%;
   }
 }
