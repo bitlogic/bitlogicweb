@@ -45,8 +45,12 @@ const Navbar = () => {
     setExpanded((prev) => !prev);
   };
 
+  const windowGlobal = typeof window !== 'undefined' && window;
+
   const containerClassNames = classnames('Navbar Navbar__Container', {
-    'Navbar--full': window ? window.scrollY && window.scrollY > 100 : false,
+    'Navbar--full': windowGlobal
+      ? windowGlobal.scrollY && windowGlobal.scrollY > 100
+      : false,
   });
 
   const menuContainerClassNames = classnames('Navbar__MenuContainer', {
