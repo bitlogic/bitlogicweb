@@ -46,7 +46,7 @@ const Navbar = () => {
   };
 
   const containerClassNames = classnames('Navbar Navbar__Container', {
-    'Navbar--full': window.scrollY && window.scrollY > 100,
+    'Navbar--full': window ? window.scrollY && window.scrollY > 100 : false,
   });
 
   const menuContainerClassNames = classnames('Navbar__MenuContainer', {
