@@ -19,10 +19,10 @@ const MENU_ITEMS = [
   },
   {
     label: 'Bitway',
-    to: '/',
+    to: '/culture',
   },
   {
-    label: 'Proyect',
+    label: 'Project',
     to: '/',
   },
   {

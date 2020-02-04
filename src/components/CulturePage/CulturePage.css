@@ -1,0 +1,68 @@
+.CulturePage__Container {
+  background-color: #74C8D2;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+}
+
+.CulturePage__Title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 60px;
+  font-weight: 800;
+  line-height: 70px;
+  text-align: left;
+  padding: 0 20px;
+  color: #2A2C2E;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.CulturePage__Content {
+  background: #ffffff;
+  padding: 120px 20px;
+  display: grid;
+}
+
+.CulturePage__Link {
+  text-align: right;
+}
+
+.CulturePage__Link ::after {
+  box-shadow: 0 0 0 1px blue;
+}
+
+.CulturePage__Link ::before {
+  border-radius: 0;
+  margin-left: -100%;
+  box-shadow: inset 0 0 0 10px black;
+}
+
+.CulturePage__Link :hover::before {
+  margin-left: 0;
+}
+
+.CulturePage__Description {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  color: #2A2C2E;
+  font-weight: 500;
+  line-height: 35px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 992px) {
+  .CulturePage__Title {
+    padding-left: 27%;
+    padding-right: 27%;
+    margin-top: 100px;
+    font-size: 75px;
+    line-height: 80px;
+  }
+
+  .CulturePage__Content {
+    padding-left: 15%;
+    padding-right: 15%;
+    grid-template-columns: 1fr 1fr;
+  }
+}
