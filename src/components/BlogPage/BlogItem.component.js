@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-
 const BlogItem = ({ title, date, description, image, href }) => {
   return (
     <div className="BlogItem BlogItem__Container">

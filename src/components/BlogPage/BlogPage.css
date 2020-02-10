@@ -3,15 +3,36 @@
   padding: 0 20px;
 }
 
-.BlogPage__Title {
+.BlogPage__Title,
+.BlogDetail__Title {
   font-family: 'Montserrat', sans-serif;
   font-size: 40px;
   line-height: 40px;
   text-align: left;
   font-weight: 700;
-  margin-top: 250px;
-  margin-bottom: 80px;
+  padding-top: 250px;
+  padding-bottom: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
   color: #fff;
+  background: url('../../images/blog-1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 1;
+}
+
+.BlogDetail__Title:before {
+  background: rgba(0, 0, 0, 0.7);
+  content: '';
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
 }
 
 .BlogPage__Content {
@@ -24,20 +45,34 @@
   margin: 30px 10px;
 }
 
+.BlogDetail__Container {
+  margin: 30px 0px;
+  background: white;
+}
+
 .BlogItem__Image {
   width: 100%;
   height: 250px;
   overflow: hidden;
 }
 
-.BlogItem__Image img {
+.BlogDetail__Image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.BlogItem__Image img,
+.BlogDetail__Image img {
   width: 100%;
   object-fit: contain;
 }
 
-.BlogItem__Content {
+.BlogItem__Content,
+.BlogDetail__Content {
   font-family: 'Montserrat', sans-serif;
   padding: 25px 20px;
+  color: #2a2c2e;
 }
 
 .BlogItem__Header__Title {
@@ -146,12 +181,14 @@
 
 @media (min-width: 992px) {
   .BlogPage__Title,
-  .BlogPage__Content {
+  .BlogPage__Content,
+  .BlogDetail__Content {
     padding-left: 15%;
     padding-right: 15%;
   }
 
-  .BlogPage__Content {
+  .BlogPage__Content,
+  .BlogDetail__Content {
     display: grid;
     grid: auto / 70% calc(30% - 40px);
     grid-gap: 40px;

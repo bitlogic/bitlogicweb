@@ -1,8 +1,6 @@
 import React from 'react';
-import Default from '../../layouts/Default';
-import SEO from '../seo';
-import './BlogPage.css';
-import BlogItem from './BlogItem.component';
+import Default from '../layouts/Default';
+import SEO from '../components/seo';
 
 const BLOG_ENTRIES = [
   {
@@ -41,15 +39,24 @@ const BLOG_ENTRIES = [
 
 const BLOG_ARCHIVE = ['Diciembre', 'Noviembre', 'Octubre', 'Septiembre'];
 
-const BlogPage = () => (
-  <Default className="BlogPage BlogPage__Container">
-    <SEO title="Blog" />
-    <h1 className="BlogPage__Title">Blog</h1>
-    <div className="BlogPage__Content">
-      <div className="BlogPage__Entries">
-        {BLOG_ENTRIES.map((entry, i) => (
-          <BlogItem key={i} {...entry} />
-        ))}
+const BLOG_CONTENT = {
+  title: 'Some title for this entry',
+  description:
+    "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
+  image: 'https://bitlogic-static-web.netlify.com/img/blog/blog-1.jpg',
+};
+
+const BlogDetail = () => (
+  <Default className="BlogDetail BlogDetail__Container">
+    <SEO title={BLOG_CONTENT.title} />
+    <h1 className="BlogDetail__Title">{BLOG_CONTENT.title}</h1>
+    <div className="BlogDetail__Content">
+      <div className="BlogDetail__Post">
+        <div className="BlogDetail__Image">
+          <img src={BLOG_CONTENT.image} alt={BLOG_CONTENT.title} />
+        </div>
+        <h1 className="BlogDetail_Title">{BLOG_CONTENT.title}</h1>
+        <p className="BlogDetail_Description">{BLOG_CONTENT.description}</p>
       </div>
       <div className="BlogPage__Sidebar">
         <div className="BlogPage__LastEntries">
@@ -72,5 +79,4 @@ const BlogPage = () => (
     </div>
   </Default>
 );
-
-export default BlogPage;
+export default BlogDetail;
