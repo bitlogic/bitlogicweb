@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import ContactImage from '../../../images/bubbles.png';
 
 const Contact = () => (
   <div className="Contact Contact__Container">
@@ -8,7 +7,7 @@ const Contact = () => (
       <div className="Contact__Text">
         <Link to="/contact" className="Contact__Link">
           Get in touch >>>
-          </Link>
+        </Link>
       </div>
     </div>
   </div>

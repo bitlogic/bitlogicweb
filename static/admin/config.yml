@@ -1,0 +1,28 @@
+backend:
+  name: git-gateway
+
+media_folder: static/assets
+public_folder: assets
+
+collections:
+  - name: Homepage
+    label: Inicio
+    description: Contenido de la página de inicio
+    create: false
+    delete: false
+    editor:
+      preview: false
+    files: 
+      - file: content/homepage/aboutUsSection.json
+        name: aboutUsSection
+        label: Sección Sobre Nosotros (About Us Section)
+        description: Contenido de la sección Sobre Nosotros
+        fields:
+          - name: aboutUsEnabled
+            widget: boolean
+            default: true
+            label: Sobre Nosotros (About Us)
+          - name: aboutUsText
+            widget: string
+            required: true
+            label: Texto Sobre Nosotros (About Us Text)

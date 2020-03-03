@@ -1,19 +1,43 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 
-const Services = () => (
-  <div className="Services Services__Container">
-    <div className="Services__Content">
-      <div className="Services__Text">
-        Nos gusta desafiar a la tecnología con cada uno de nuestros servicios.
-      </div>
-      <div className="Services__Link">
-        <Link to="/services" className="Home__Link">
-          Get in >>>
-        </Link>
+const Services = () => {
+  const {
+    allHomepageJson: { nodes },
+  } = useStaticQuery(graphql`
+    query ServicesSection {
+      allHomepageJson(filter: { name: { eq: "services-section" } }) {
+        nodes {
+          enabled
+          text
+          name
+        }
+      }
+    }
+  `);
+
+  if (!nodes || !nodes.length) {
+    return null;
+  }
+
+  const servicesSectionData = nodes[0];
+
+  if (!servicesSectionData.enabled) {
+    return null;
+  }
+
+  return (
+    <div className="Services Services__Container">
+      <div className="Services__Content">
+        <div className="Services__Text">{servicesSectionData.text}</div>
+        <div className="Services__Link">
+          <Link to="/services" className="Home__Link">
+            Get in >>>
+          </Link>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Services;
