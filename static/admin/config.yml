@@ -13,16 +13,79 @@ collections:
     editor:
       preview: false
     files: 
-      - file: content/homepage/aboutUsSection.json
+      - file: content/homepage/aboutUs.json
         name: aboutUsSection
-        label: Sección Sobre Nosotros (About Us Section)
+        label: Sobre Nosotros
         description: Contenido de la sección Sobre Nosotros
         fields:
-          - name: aboutUsEnabled
+          - name: name
+            widget: hidden
+            default: about-us-section
+          - name: enabled
             widget: boolean
             default: true
-            label: Sobre Nosotros (About Us)
-          - name: aboutUsText
+            label: Sobre Nosotros
+          - name: text
             widget: string
             required: true
-            label: Texto Sobre Nosotros (About Us Text)
+            label: Texto Sobre Nosotros
+      - file: content/homepage/culture.json
+        name: cultureSection
+        label: Cultura
+        description: Contenido de la sección Cultura
+        fields:
+          - name: name
+            widget: hidden
+            default: culture-section
+          - name: enabled
+            widget: boolean
+            default: true
+            label: Cultura
+          - name: text
+            widget: string
+            required: true
+            label: Texto Cultura
+      - file: content/homepage/projects.json
+        name: projectsSection
+        label: Proyectos
+        description: Contenido de la sección Proyectos
+        fields:
+          - name: name
+            widget: hidden
+            default: projects-section
+          - name: enabled
+            widget: boolean
+            default: true
+            label: Proyectos
+          - name: text
+            widget: string
+            required: true
+            label: Texto Proyectos
+      - file: content/homepage/services.json
+        name: servicesSection
+        label: Servicios
+        description: Contenido de la sección Servicios
+        fields:
+          - name: name
+            widget: hidden
+            default: services-section
+          - name: enabled
+            widget: boolean
+            default: true
+            label: Servicios
+          - name: text
+            widget: string
+            required: true
+            label: Texto Servicios
+      - file: content/homepage/blog.json
+        name: blogSection
+        label: Blog
+        description: Contenido de la sección Blog
+        fields:
+          - name: name
+            widget: hidden
+            default: blog-section
+          - name: enabled
+            widget: boolean
+            default: true
+            label: Blog
