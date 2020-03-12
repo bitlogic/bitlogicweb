@@ -3,7 +3,7 @@ import { Button, TextField } from '@material-ui/core';
 import SendIcon from '@material-ui/icons/Send';
 import Default from '../../layouts/Default';
 import SEO from '../seo';
-
+import { useStaticQuery, graphql } from 'gatsby';
 import './ContactPage.css';
 
 const ContactPage = () => {
@@ -20,19 +20,37 @@ const ContactPage = () => {
     event.preventDefault();
   };
 
+  const {
+    allContactJson: { nodes },
+  } = useStaticQuery(graphql`
+    query ContactPage {
+      allContactJson {
+        nodes {
+          title
+          description
+          section
+        }
+      }
+    }
+  `);
+
+  if (!nodes || !nodes.length) {
+    return null;
+  }
+
+  const contactPageData = nodes[0];
+
   return (
     <Default className="ContactPage ContactPage__Container">
       <SEO title="Contact" />
 
-      <h1 className="ContactPage__Title">
-        Get in touch
-      </h1>
+      <h1 className="ContactPage__Title">{contactPageData.section}</h1>
       <div className="ContactPage__Content">
         <div className="ContactPage__LeftContent">
-          <h2 className="ContactPage__Subtitle">Dejanos tu consulta</h2>
+          <h2 className="ContactPage__Subtitle">{contactPageData.title}</h2>
           <div className="ContactPage__Description">
-            Un asesor se pondra en contacto a la brevedad
-        </div>
+            {contactPageData.description}
+          </div>
         </div>
 
         <div className="ContactPage__RightContent">
@@ -61,7 +79,9 @@ const ContactPage = () => {
             />
             <TextField
               variant="outlined"
-              placeholder="Consulta" multiline={true} rows={5}
+              placeholder="Consulta"
+              multiline={true}
+              rows={5}
               className="ContactPage__Input"
               value={formData.body || ''}
               onChange={onFormChange('body')}
@@ -77,10 +97,9 @@ const ContactPage = () => {
             </Button>
           </form>
         </div>
-
       </div>
     </Default>
   );
-}
+};
 
 export default ContactPage;

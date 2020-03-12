@@ -1,0 +1,17 @@
+{
+  "title": "Nos gusta desafiar a la tecnología con cada uno de nuestros servicios.",
+  "services": [
+    {
+      "title": "Devops",
+      "description": "Nuestro equipo es experto en infraestructura programable para la creación y automatización de entornos de desarrollo y producción para aplicaciones altamente escalables."
+    },
+    {
+      "title": "Microservicios",
+      "description": "Nos centramos en diseñar el escenario adecuado para migrar aplicaciones existentes o nuevas a una arquitectura de microservicios escalable."
+    },
+    {
+      "title": "Aprendizaje automático",
+      "description": "Creamos herramientas de aprendizaje automático que pueden extraer información valiosa para el negocio a partir de big data."
+    }
+  ]
+}

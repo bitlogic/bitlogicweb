@@ -1,30 +1,45 @@
 import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 import Default from '../../layouts/Default';
 import SEO from '../seo';
 import IsotipoBitlogic from '../../images/isotipo.png';
 import './AboutUsPage.css';
 
-const AboutUsPage = () => (
-  <Default className="AboutUsPage AboutUsPage__Container">
-    <SEO title="AboutUs" />
+const AboutUsPage = () => {
+  const {
+    allAboutUsJson: { nodes },
+  } = useStaticQuery(graphql`
+    query AboutPage {
+      allAboutUsJson {
+        nodes {
+          title
+          description
+        }
+      }
+    }
+  `);
 
-    <h1 className="AboutUsPage__Title">
-      Impulsamos tu transformación digital con ideas creativas que alcanzan
-      nuevos destinos.
-    </h1>
-    <div className="AboutUsPage__Content">
-      <div className="AboutUsPage__Description">
-        Bitlogic es una empresa audaz, que apuesta a la chispa que se enciende
-        en cada desafío, que marca la diferencia y logra destruir el
-        conformismo. Desarrollamos productos que generen un cambio, porque
-        trabajando en conjunto con nuestros clientes, te acompañamos a la
-        transformación que te permitirá evolucionar a gran velocidad y escala.
+  if (!nodes || !nodes.length) {
+    return null;
+  }
+
+  const aboutUsPageData = nodes[0];
+
+  return (
+    <Default className="AboutUsPage AboutUsPage__Container">
+      <SEO title="AboutUs" />
+
+      <h1 className="AboutUsPage__Title">{aboutUsPageData.title}</h1>
+      <div className="AboutUsPage__Content">
+        <div className="AboutUsPage__Description">
+          {aboutUsPageData.description}
+        </div>
+        <div className="AboutUsPage__Image">
+          <img src={IsotipoBitlogic} alt="bitlogic" />
+        </div>
       </div>
-      <div className="AboutUsPage__Image">
-        <img src={IsotipoBitlogic} alt="bitlogic" />
-      </div>
-    </div>
-  </Default>
-);
+    </Default>
+  );
+};
 
 export default AboutUsPage;

@@ -3,74 +3,66 @@ import Default from '../../layouts/Default';
 import SEO from '../seo';
 import './BlogPage.css';
 import BlogItem from './BlogItem.component';
+import { useStaticQuery, graphql } from 'gatsby';
 
-const BLOG_ENTRIES = [
-  {
-    date: '28-12-2019',
-    title: 'Some title for this entry',
-    description:
-      'Some description for this entry, it needs a loooooooooong string.',
-    image: 'https://bitlogic-static-web.netlify.com/img/blog/blog-1.jpg',
-    href: '/blog-detail',
-  },
-  {
-    date: '10-08-2019',
-    title: 'Some title for this entry',
-    description:
-      'Some description for this entry, it needs a loooooooooong string.',
-    image: 'https://bitlogic-static-web.netlify.com/img/blog/blog-1.jpg',
-    href: '/blog-detail',
-  },
-  {
-    date: '13-02-2018',
-    title: 'Some title for this entry',
-    description:
-      'Some description for this entry, it needs a loooooooooong string.',
-    image: 'https://bitlogic-static-web.netlify.com/img/blog/blog-1.jpg',
-    href: '/blog-detail',
-  },
-  {
-    date: '15-04-2019',
-    title: 'Some title for this entry',
-    description:
-      'Some description for this entry, it needs a loooooooooong string.',
-    image: 'https://bitlogic-static-web.netlify.com/img/blog/blog-1.jpg',
-    href: '/blog-detail',
-  },
-];
+const BlogPage = () => {
+  const {
+    allBlogJson: { nodes },
+  } = useStaticQuery(graphql`
+    query BlogPage {
+      allBlogJson {
+        nodes {
+          archive
+          months
+          latest
+          entries {
+            date
+            description
+            href
+            image
+            title
+          }
+        }
+      }
+    }
+  `);
 
-const BLOG_ARCHIVE = ['Diciembre', 'Noviembre', 'Octubre', 'Septiembre'];
+  if (!nodes || !nodes.length) {
+    return null;
+  }
 
-const BlogPage = () => (
-  <Default className="BlogPage BlogPage__Container">
-    <SEO title="Blog" />
-    <h1 className="BlogPage__Title">Blog</h1>
-    <div className="BlogPage__Content">
-      <div className="BlogPage__Entries">
-        {BLOG_ENTRIES.map((entry, i) => (
-          <BlogItem key={i} {...entry} />
-        ))}
-      </div>
-      <div className="BlogPage__Sidebar">
-        <div className="BlogPage__LastEntries">
-          <h3>Últimas entradas</h3>
-          <ul>
-            {BLOG_ENTRIES.map((entry, i) => (
-              <li key={i}>{entry.title}</li>
-            ))}
-          </ul>
+  const blogData = nodes[0];
+
+  return (
+    <Default className="BlogPage BlogPage__Container">
+      <SEO title="Blog" />
+      <h1 className="BlogPage__Title">Blog</h1>
+      <div className="BlogPage__Content">
+        <div className="BlogPage__Entries">
+          {blogData.entries.map((entry, i) => (
+            <BlogItem key={i} {...entry} />
+          ))}
         </div>
-        <div className="BlogPage__Archive">
-          <h3>Archivo de entradas</h3>
-          <ul>
-            {BLOG_ARCHIVE.map((month, i) => (
-              <li key={i}>{month}</li>
-            ))}
-          </ul>
+        <div className="BlogPage__Sidebar">
+          <div className="BlogPage__LastEntries">
+            <h3>{blogData.latest}</h3>
+            <ul>
+              {blogData.entries.map((entry, i) => (
+                <li key={i}>{entry.title}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="BlogPage__Archive">
+            <h3>{blogData.archive}</h3>
+            <ul>
+              {blogData.months.map((month, i) => (
+                <li key={i}>{month}</li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </Default>
-);
-
+    </Default>
+  );
+};
 export default BlogPage;
