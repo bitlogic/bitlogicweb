@@ -15,14 +15,14 @@ const SITEMAP_ITEMS = [
     label: 'Bitway',
     to: '/',
   },
-  {
-    label: 'Proyect',
-    to: '/',
-  },
-  {
-    label: 'Blog',
-    to: '/blog',
-  },
+  // {
+  //   label: 'Project',
+  //   to: '/',
+  // },
+  // {
+  //   label: 'Blog',
+  //   to: '/blog',
+  // },
   {
     label: 'Contacto',
     to: '/contact',

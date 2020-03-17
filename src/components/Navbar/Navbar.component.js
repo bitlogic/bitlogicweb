@@ -21,14 +21,14 @@ const MENU_ITEMS = [
     label: 'Bitway',
     to: '/culture',
   },
-  {
-    label: 'Project',
-    to: '/',
-  },
-  {
-    label: 'Blog',
-    to: '/blog',
-  },
+  // {
+  //   label: 'Project',
+  //   to: '/',
+  // },
+  // {
+  //   label: 'Blog',
+  //   to: '/blog',
+  // },
   {
     label: 'Contacto',
     to: '/contact',
