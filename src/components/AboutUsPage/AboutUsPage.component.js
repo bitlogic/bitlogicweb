@@ -29,11 +29,15 @@ const AboutUsPage = () => {
     <Default className="AboutUsPage AboutUsPage__Container">
       <SEO title="AboutUs" />
 
-      <h1 className="AboutUsPage__Title">{aboutUsPageData.title}</h1>
+      <div
+        className="AboutUsPage__Title"
+        dangerouslySetInnerHTML={{ __html: aboutUsPageData.title }}
+      />
       <div className="AboutUsPage__Content">
-        <div className="AboutUsPage__Description">
-          {aboutUsPageData.description}
-        </div>
+        <div
+          className="AboutUsPage__Description"
+          dangerouslySetInnerHTML={{ __html: aboutUsPageData.description }}
+        />
         <div className="AboutUsPage__Image">
           <img src={IsotipoBitlogic} alt="bitlogic" />
         </div>

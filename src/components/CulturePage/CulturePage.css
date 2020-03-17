@@ -41,6 +41,16 @@
   margin-left: 0;
 }
 
+.CulturePage__Manifest__Title {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.CulturePage__Manifest {
+  text-align: justify;
+}
+
+.CulturePage__Manifest,
 .CulturePage__Description {
   font-family: 'Montserrat', sans-serif;
   font-size: 24px;
@@ -49,6 +59,56 @@
   line-height: 35px;
   padding-left: 15px;
   padding-right: 15px;
+}
+
+
+.Home__Content .Services__Link,
+.Home__Content .AboutUs__Link,
+.Home__Content .Culture__Link,
+.Home__Content .Projects__Link {
+  text-align: right;
+  margin: 30px 0 30px auto;
+}
+
+
+.CulturePage__Container .CulturePage__Link a {
+  position: relative;
+  transform-style: preserve-3d;
+  display: inline-flex;
+  z-index: 1;
+  color: #74c8d2;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+  padding: 10px 15px;
+}
+
+.CulturePage__Container .CulturePage__Link a::after {
+  position: absolute;
+  content: "";
+  background: #74c8d2;
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transition: right 0.3s ease-in-out, width 0.2s ease-in-out;
+  transform: translateZ(-1px);
+  border: 0;
+  box-shadow: none;
+}
+
+.CulturePage__Container .CulturePage__Link a:hover {
+  color: #000;
+}
+
+.CulturePage__Container .CulturePage__Link a:hover::after,
+.CulturePage__Container .CulturePage__Link a:focus::after {
+  width: 100%;
 }
 
 @media (min-width: 992px) {
@@ -65,5 +125,6 @@
     padding-left: 15%;
     padding-right: 15%;
     grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
   }
 }

@@ -14,6 +14,7 @@ const CulturePage = () => {
         nodes {
           title
           description
+          manifestItems
           link
         }
       }
@@ -31,9 +32,22 @@ const CulturePage = () => {
       <SEO title="Culture" />
       <h1 className="CulturePage__Title">{culturePageData.title}</h1>
       <div className="CulturePage__Content">
-        <p className="CulturePage__Description">
-          {culturePageData.description}
-        </p>
+        <div>
+          <div className="CulturePage__Manifest">
+            <div className="CulturePage__Manifest__Title">Manifiesto</div>
+            <div className="CulturePage__Manifest__List">
+              <ul>
+                {culturePageData.manifestItems.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div
+            className="CulturePage__Description"
+            dangerouslySetInnerHTML={{ __html: culturePageData.description }}
+          />
+        </div>
         <div>
           <img src={CultureImage} alt="bitlogic" />
           <div className="CulturePage__Link">
