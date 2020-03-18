@@ -111,6 +111,34 @@
   width: 100%;
 }
 
+.CulturePage__ImagesContainer {
+  position: relative;
+  height: 200px;
+  max-height: 250px;
+  margin-bottom: 20px;
+}
+
+.CulturePage__Image {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.CulturePage__Image--active {
+  opacity: 1;
+}
+
+@media (min-width: 568px) {
+  .CulturePage__ImagesContainer {
+    height: 400px;
+    max-height: 400px;
+  }
+}
+
 @media (min-width: 992px) {
   .CulturePage__Title {
     padding-left: 27%;

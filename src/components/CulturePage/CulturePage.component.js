@@ -1,11 +1,45 @@
-import React from 'react';
-import Default from '../../layouts/Default';
-import SEO from '../seo';
-import './CulturePage.css';
-import CultureImage from '../../images/staff.jpg';
+import React, { useState, useEffect } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import SEO from '../seo';
+import Default from '../../layouts/Default';
+
+import './CulturePage.css';
+
+const PHOTOS = [
+  '/assets/photos/bitlogic_photo_1.jpg',
+  '/assets/photos/bitlogic_photo_2.jpg',
+  '/assets/photos/bitlogic_photo_3.jpg',
+  '/assets/photos/bitlogic_photo_4.jpg',
+  '/assets/photos/bitlogic_photo_5.jpg',
+  '/assets/photos/bitlogic_photo_6.jpg',
+  '/assets/photos/bitlogic_photo_7.jpg',
+  '/assets/photos/bitlogic_photo_8.jpg',
+  '/assets/photos/bitlogic_photo_9.jpg',
+  '/assets/photos/bitlogic_photo_10.jpg',
+  '/assets/photos/bitlogic_photo_11.jpg',
+  '/assets/photos/bitlogic_photo_12.jpg',
+];
 
 const CulturePage = () => {
+  const [photoIndex, setPhotoIndex] = useState(0);
+
+  let timeoutFn = null;
+  useEffect(() => {
+    if (timeoutFn) {
+      clearTimeout(timeoutFn);
+    }
+    timeoutFn = setInterval(() => {
+      const newIndex = photoIndex + 1;
+      setPhotoIndex(PHOTOS.length > newIndex ? newIndex : 0);
+    }, 3000);
+
+    return () => {
+      if (timeoutFn) {
+        clearTimeout(timeoutFn);
+      }
+    };
+  }, [photoIndex]);
+
   const {
     allCultureJson: { nodes },
   } = useStaticQuery(graphql`
@@ -49,7 +83,18 @@ const CulturePage = () => {
           />
         </div>
         <div>
-          <img src={CultureImage} alt="bitlogic" />
+          <div className="CulturePage__ImagesContainer">
+            {PHOTOS.map((imageSrc, i) => (
+              <img
+                key={i}
+                src={imageSrc}
+                alt={`bitlogic #${i}`}
+                className={`CulturePage__Image CulturePage__Image--${
+                  photoIndex === i ? 'active' : 'hidden'
+                }`}
+              />
+            ))}
+          </div>
           <div className="CulturePage__Link">
             <a href={culturePageData.link}>>> Jobs</a>
           </div>
