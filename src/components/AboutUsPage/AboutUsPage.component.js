@@ -33,15 +33,10 @@ const AboutUsPage = () => {
         className="AboutUsPage__Title"
         dangerouslySetInnerHTML={{ __html: aboutUsPageData.title }}
       />
-      <div className="AboutUsPage__Content">
-        <div
-          className="AboutUsPage__Description"
-          dangerouslySetInnerHTML={{ __html: aboutUsPageData.description }}
-        />
-        <div className="AboutUsPage__Image">
-          <img src={IsotipoBitlogic} alt="bitlogic" />
-        </div>
-      </div>
+      <div
+        className="AboutUsPage__Content"
+        dangerouslySetInnerHTML={{ __html: aboutUsPageData.description }}
+      />
     </Default>
   );
 };
