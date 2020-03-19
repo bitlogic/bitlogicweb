@@ -59,8 +59,11 @@ const CulturePage = () => {
       <h1 className="CulturePage__Title">{culturePageData.title}</h1>
       <div className="CulturePage__Content">
         <div>
+          <div
+            className="CulturePage__Description"
+            dangerouslySetInnerHTML={{ __html: culturePageData.description }}
+          />
           <div className="CulturePage__Manifest">
-            <div className="CulturePage__Manifest__Title">Manifiesto</div>
             <div className="CulturePage__Manifest__List">
               <ul>
                 {culturePageData.manifestItems.map((item, i) => (
@@ -69,10 +72,9 @@ const CulturePage = () => {
               </ul>
             </div>
           </div>
-          <div
-            className="CulturePage__Description"
-            dangerouslySetInnerHTML={{ __html: culturePageData.description }}
-          />
+          <div className="CulturePage__Description">
+            <strong>Somos distintos.</strong>
+          </div>
         </div>
         <div>
           <div className="CulturePage__ImagesContainer">
