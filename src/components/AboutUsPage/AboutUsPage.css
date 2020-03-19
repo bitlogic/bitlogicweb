@@ -45,4 +45,29 @@
     padding-left: 15%;
     padding-right: 15%;
   }
+
+  .AboutUsPage__ImagesContainer {
+    padding-left: 15%;
+    padding-right: 15%;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+}
+
+@media (min-width: 568px) {
+  .AboutUsPage__ImagesContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(auto, auto);
+  }
+}
+
+@media (max-width: 420px) {
+  .AboutUsPage__ImagesContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(auto, auto);
+  }
 }

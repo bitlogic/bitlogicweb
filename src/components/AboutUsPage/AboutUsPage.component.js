@@ -2,8 +2,14 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Default from '../../layouts/Default';
 import SEO from '../seo';
-import IsotipoBitlogic from '../../images/isotipo.png';
 import './AboutUsPage.css';
+
+const PHOTOS = [
+  '/assets/photos/bitlogic_photo_9.jpg',
+  '/assets/photos/bitlogic_photo_6.jpg',
+  '/assets/photos/bitlogic_photo_7.jpg',
+  '/assets/photos/bitlogic_photo_8.jpg',
+];
 
 const AboutUsPage = () => {
   const {
@@ -37,6 +43,11 @@ const AboutUsPage = () => {
         className="AboutUsPage__Content"
         dangerouslySetInnerHTML={{ __html: aboutUsPageData.description }}
       />
+      <div className="AboutUsPage__ImagesContainer">
+        {PHOTOS.map((imageSrc, i) => (
+          <img key={i} src={imageSrc} alt={`bitlogic #${i}`} />
+        ))}
+      </div>
     </Default>
   );
 };

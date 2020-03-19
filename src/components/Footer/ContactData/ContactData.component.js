@@ -2,7 +2,7 @@ import React from 'react';
 import './ContactData.css';
 
 const CONTACT_ITEMS = [
-  'Tristán Malbrán 4355',
+  'José Roque Funes 1791',
   'Córdoba, Argentina',
   '+54 9 351 157 404 863',
 ];

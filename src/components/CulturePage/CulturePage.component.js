@@ -6,18 +6,10 @@ import Default from '../../layouts/Default';
 import './CulturePage.css';
 
 const PHOTOS = [
-  '/assets/photos/bitlogic_photo_1.jpg',
-  '/assets/photos/bitlogic_photo_2.jpg',
-  '/assets/photos/bitlogic_photo_3.jpg',
-  '/assets/photos/bitlogic_photo_4.jpg',
-  '/assets/photos/bitlogic_photo_5.jpg',
-  '/assets/photos/bitlogic_photo_6.jpg',
-  '/assets/photos/bitlogic_photo_7.jpg',
-  '/assets/photos/bitlogic_photo_8.jpg',
-  '/assets/photos/bitlogic_photo_9.jpg',
-  '/assets/photos/bitlogic_photo_10.jpg',
   '/assets/photos/bitlogic_photo_11.jpg',
   '/assets/photos/bitlogic_photo_12.jpg',
+  '/assets/photos/bitlogic_photo_3.jpg',
+  '/assets/photos/bitlogic_photo_4.jpg',
 ];
 
 const CulturePage = () => {
@@ -85,18 +77,13 @@ const CulturePage = () => {
         <div>
           <div className="CulturePage__ImagesContainer">
             {PHOTOS.map((imageSrc, i) => (
-              <img
-                key={i}
-                src={imageSrc}
-                alt={`bitlogic #${i}`}
-                className={`CulturePage__Image CulturePage__Image--${
-                  photoIndex === i ? 'active' : 'hidden'
-                }`}
-              />
+              <img key={i} src={imageSrc} alt={`bitlogic #${i}`} />
             ))}
           </div>
           <div className="CulturePage__Link">
-            <a href={culturePageData.link}>>> Jobs</a>
+            <a target="_blank" href={culturePageData.link}>
+              >> Jobs
+            </a>
           </div>
         </div>
       </div>

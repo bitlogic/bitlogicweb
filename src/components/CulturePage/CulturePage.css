@@ -61,7 +61,6 @@
   padding-right: 15px;
 }
 
-
 .Home__Content .Services__Link,
 .Home__Content .AboutUs__Link,
 .Home__Content .Culture__Link,
@@ -69,7 +68,6 @@
   text-align: right;
   margin: 30px 0 30px auto;
 }
-
 
 .CulturePage__Container .CulturePage__Link a {
   position: relative;
@@ -88,7 +86,7 @@
 
 .CulturePage__Container .CulturePage__Link a::after {
   position: absolute;
-  content: "";
+  content: '';
   background: #74c8d2;
   width: 0;
   height: 100%;
@@ -113,9 +111,6 @@
 
 .CulturePage__ImagesContainer {
   position: relative;
-  height: 200px;
-  max-height: 250px;
-  margin-bottom: 20px;
 }
 
 .CulturePage__Image {
@@ -134,8 +129,10 @@
 
 @media (min-width: 568px) {
   .CulturePage__ImagesContainer {
-    height: 400px;
-    max-height: 400px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(auto, auto);
   }
 }
 
@@ -152,7 +149,16 @@
   .CulturePage__Content {
     padding-left: 15%;
     padding-right: 15%;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  .CulturePage__ImagesContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(auto, auto);
   }
 }

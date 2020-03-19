@@ -10,11 +10,11 @@ import './Navbar.css';
 
 const MENU_ITEMS = [
   {
-    label: 'Nosotros',
+    label: 'We Are',
     to: '/about-us',
   },
   {
-    label: 'Servicios',
+    label: 'Get In',
     to: '/services',
   },
   {
