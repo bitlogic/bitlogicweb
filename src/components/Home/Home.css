@@ -2,12 +2,91 @@
 
 /* CONTAINER */
 
+@keyframes slogan-colors {
+  0% {
+    color: #fafafa;
+  }
+  50% {
+    color: #74c8d2;
+  }
+  100% {
+    color: #fafafa;
+  }
+}
+
+@keyframes slogan-underline {
+  0% {
+    left: 0;
+    width: 50%;
+    background: #74c8d2;
+  }
+  25% {
+    left: 45%;
+    width: 55%;
+    background: #fafafa;
+  }
+  50% {
+    left: 25%;
+    width: 20%;
+    background: #74c8d2;
+  }
+  75% {
+    left: 40%;
+    width: 40%;
+    background: #fafafa;
+  }
+  100% {
+    left: 0;
+    width: 50%;
+    background: #74c8d2;
+  }
+}
+
 .Home__Content .Banner__Container {
   min-height: calc(100vh - 56px);
 }
 
 .Home__Content .Banner__Container img {
   margin: auto;
+}
+
+.Home__Content .Banner__Container .Banner__Slogan {
+  position: relative;
+  margin: 0 auto auto;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.Home__Content .Banner__Container .Banner__Slogan::after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  width: 50%;
+  background: #74c8d2;
+  animation: 3s infinite slogan-underline;
+}
+
+.Home__Content .Banner__Container .Banner__Slogan span {
+  display: inline-block;
+}
+
+.Home__Content .Banner__Container .Banner__Slogan span:not(:first-child) {
+  animation: 3s infinite alternate slogan-colors;
+}
+
+.Home__Content .Banner__Container .Banner__Slogan span:not(:first-child):nth-child(odd) {
+  animation: 3s infinite slogan-colors;
+}
+
+.Home__Content .Banner__Container .Banner__Slogan span:first-child {
+  color: #FAFAFA;
+}
+
+.Home__Content .Banner__Container .Banner__Slogan span:nth-child(odd) {
+  color: #FAFAFA;
 }
 
 .Home__Content .AboutUs__Container,
