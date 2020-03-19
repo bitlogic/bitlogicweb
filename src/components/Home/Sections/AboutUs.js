@@ -34,7 +34,7 @@ const AboutUs = () => {
         <div className="AboutUs__Text">{aboutUsSectionData.text}</div>
         <div className="AboutUs__Link">
           <Link to="/about-us" className="Home__Link">
-            We are >>>
+            Nosotros >>>
           </Link>
         </div>
       </div>

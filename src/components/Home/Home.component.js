@@ -5,9 +5,8 @@ import Banner from './Sections/Banner';
 import AboutUs from './Sections/AboutUs';
 import Services from './Sections/Services';
 import Culture from './Sections/Culture';
-import Projects from './Sections/Projects';
 import Blog from './Sections/Blog';
-import Contact from './Sections/Contact'
+import Contact from './Sections/Contact';
 
 import './Home.css';
 
@@ -20,7 +19,6 @@ const Home = () => (
       <AboutUs />
       <Services />
       <Culture />
-      <Projects />
       <Blog />
       <Contact />
     </div>

@@ -32,7 +32,7 @@ const Services = () => {
         <div className="Services__Text">{servicesSectionData.text}</div>
         <div className="Services__Link">
           <Link to="/services" className="Home__Link">
-            Get in >>>
+            Servicios >>>
           </Link>
         </div>
       </div>
