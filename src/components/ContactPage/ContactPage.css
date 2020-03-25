@@ -76,6 +76,18 @@
   color: #2a2c2e;
 }
 
+.ContactPage__FormContainer__CTAContainer__SubmitProgress {
+  display: none;
+}
+
+.ContactPage__FormContainer__CTAContainer--loading .ContactPage__FormContainer__CTAContainer__SubmitProgress {
+  display: block;
+}
+
+.ContactPage__FormContainer__CTAContainer--loading button {
+  display: none;
+}
+
 @media (min-width: 992px) {
   .ContactPage__Title {
     padding-left: 15%;
