@@ -171,7 +171,6 @@
 }
 
 .textoSlider {
-  font-size: 40px;
   font-weight: 500;
   display: flex;
   flex-wrap: wrap;
@@ -179,7 +178,6 @@
   margin-left: 50px;
   align-content: flex-end;
   color: white;
-  max-width: 720px;
   padding-bottom: 50px;
 }
 
@@ -193,6 +191,11 @@
     grid-template-columns: repeat(1, 1fr);
     grid-auto-rows: minmax(auto, auto);
     padding: 0 30px;
+  }
+
+  .textoSlider {
+    font-size: 40px;
+    width: 400px;
   }
 }
 
@@ -219,6 +222,11 @@
   .CulturePage__FirstText {
     padding-right: 27%;
   }
+
+  .textoSlider {
+    font-size: 40px;
+    width: 720px;
+  }
 }
 
 @media (max-width: 420px) {
@@ -228,5 +236,10 @@
     grid-gap: 10px;
     grid-auto-rows: minmax(auto, auto);
     padding: 0 30px;
+  }
+
+  .textoSlider {
+    font-size: 30px;
+    width: 350px;
   }
 }
