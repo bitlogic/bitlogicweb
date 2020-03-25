@@ -28,22 +28,15 @@ const AboutUs = () => {
 
   return (
     <div className="AboutUs AboutUs__Container">
-      {/* <img src={AboutUsImage} alt="About Us" /> */}
-      <div class="container">
-        <div class="box">
-          <div class="title">
-            <span class="block"></span>
-            <h1>
-              In Code<span></span>
-            </h1>
-          </div>
-          <div class="role">
-            <div class="block"></div>
-            <p>We Trust</p>
-          </div>
-        </div>
+      <div className="AboutUs__AnimationContainer">
+        <span>.</span>
+        <span>:</span>
+        <span>.</span>
+        <span>:</span>
+        <span>.</span>
+        <span>:</span>
+        <span>.</span>
       </div>
-      <div id="app"></div>
       <div className="AboutUs__Content">
         <div className="AboutUs__Text">{aboutUsSectionData.text}</div>
         <div className="AboutUs__Link">

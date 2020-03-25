@@ -2,6 +2,24 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400|Poppins:300,400,800&display=swap');
 /* CONTAINER */
 
+@keyframes aboutus-animation {
+  0% {
+    color: #fafafa;
+    transform: rotateX(180deg);
+    padding: 0 10px;
+  }
+  50% {
+    color: #74c8d2;
+    transform: rotateX(90deg);
+    padding: 0 20px;
+  }
+  100% {
+    color: #fafafa;
+    transform: rotateX(0deg);
+    padding: 0 15px;
+  }
+}
+
 @keyframes slogan-colors {
   0% {
     color: #fafafa;
@@ -148,6 +166,21 @@
   display: flex;
   flex-direction: column;
   padding: 0 20px;
+}
+
+.AboutUs__AnimationContainer {
+  font-size: 48px;
+  font-weight: bold;
+  padding: 20px;
+  text-align: center;
+}
+
+.AboutUs__AnimationContainer span {
+  animation: 5s infinite alternate aboutus-animation;
+}
+
+.AboutUs__AnimationContainer span:nth-child(odd) {
+  animation: 5s infinite aboutus-animation;
 }
 
 .Home__Content .AboutUs__Content,
