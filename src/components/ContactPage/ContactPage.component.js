@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
-import { Button, TextField } from '@material-ui/core';
+import {
+  Button,
+  TextField,
+  Typography,
+  LinearProgress,
+} from '@material-ui/core';
 import { useStaticQuery, graphql } from 'gatsby';
+import emailjs from 'emailjs-com';
 import SendIcon from '@material-ui/icons/Send';
 import Default from '../../layouts/Default';
 import SEO from '../seo';
@@ -30,8 +36,63 @@ const ContactPage = () => {
     });
   };
 
-  const onSubmit = (event) => {
+  const isSubmitEnabled = () => {
+    if (!formData.name || !formData.name.trim().length) {
+      return false;
+    }
+
+    if (!formData.email || !formData.email.trim().length) {
+      return false;
+    }
+
+    if (!formData.phone || !formData.phone.trim().length) {
+      return false;
+    }
+
+    if (!formData.body || !formData.body.trim().length) {
+      return false;
+    }
+
+    return true;
+  };
+
+  const onSubmit = async (event) => {
     event.preventDefault();
+    const now = new Date();
+
+    setFormData({
+      ...formData,
+      isLoading: true,
+    });
+
+    if (isSubmitEnabled()) {
+      const data = {
+        ...formData,
+        date: `${now.getDate()}/${now.getMonth()}/${now.getFullYear()}`,
+        time: `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`,
+      };
+
+      try {
+        await emailjs.send(
+          'bitlogic',
+          'basetemplate',
+          data,
+          'user_qKgUsk9KEtGfO2BIQapOO'
+        );
+        setFormData({
+          ...formData,
+          sent: true,
+          isLoading: false,
+        });
+      } catch (e) {
+        console.error(e);
+        setFormData({
+          ...formData,
+          sent: false,
+          isLoading: false,
+        });
+      }
+    }
   };
 
   const {
@@ -102,14 +163,35 @@ const ContactPage = () => {
                 onChange={onFormChange('body')}
               />
 
-              <Button
-                type="submit"
-                variant="contained"
-                color="primary"
-                endIcon={<SendIcon />}
+              <div
+                className={`ContactPage__FormContainer__CTAContainer ${
+                  formData.isLoading
+                    ? 'ContactPage__FormContainer__CTAContainer--loading'
+                    : ''
+                }`}
               >
-                Enviar
-              </Button>
+                <LinearProgress
+                  color="primary"
+                  className="ContactPage__FormContainer__CTAContainer__SubmitProgress"
+                />
+                {!formData.sent && (
+                  <Button
+                    className="ContactPage__FormContainer__CTAContainer__SubmitButton"
+                    disabled={!isSubmitEnabled()}
+                    type="submit"
+                    variant="contained"
+                    color="secondary"
+                    endIcon={<SendIcon />}
+                  >
+                    Enviar
+                  </Button>
+                )}
+                {formData.sent && (
+                  <Typography variant="body1">
+                    Tu mensaje ha sido enviado con éxito. ¡Gracias!
+                  </Typography>
+                )}
+              </div>
             </form>
           </div>
         </div>
