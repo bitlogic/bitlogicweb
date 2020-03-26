@@ -2,7 +2,7 @@ import React from 'react';
 import Default from '../../layouts/Default';
 import SEO from '../seo';
 import ServiceItem from './ServiceItem';
-import IsotipoBitlogic from '../../images/isotipo.png';
+import ServicePhoto from '../../../static/assets/photos/bitlogic_photo_4.jpg';
 import './ServicesPage.css';
 import { useStaticQuery, graphql } from 'gatsby';
 
@@ -41,7 +41,7 @@ const ServicesPage = () => {
           </ServiceItem>
         ))}
         <div className="ServicesPage__Image">
-          <img src={IsotipoBitlogic} alt="bitlogic" />
+          <img src={ServicePhoto} alt="bitlogic servicios" />
         </div>
       </div>
     </Default>
