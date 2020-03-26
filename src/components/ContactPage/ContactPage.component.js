@@ -115,7 +115,6 @@ const ContactPage = () => {
               {contactPageData.description}
             </div>
           </div>
-
           <div className="ContactPage__RightContent">
             <form onSubmit={onSubmit}>
               <TextField
