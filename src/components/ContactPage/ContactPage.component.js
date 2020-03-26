@@ -13,19 +13,6 @@ import SEO from '../seo';
 
 import './ContactPage.css';
 
-const CLIENTS = [
-  '/assets/clients/Cboard_color1.png',
-  '/assets/clients/G-se_azul.png',
-  '/assets/clients/gobierno-de-la-provincia-de-cordoba_color.png',
-  '/assets/clients/Ilumno_color.png',
-  '/assets/clients/Kolektor_color-22.png',
-  '/assets/clients/Quimex_COLOR.png',
-  '/assets/clients/red-hat_color.png',
-  '/assets/clients/Skael_color.png',
-  '/assets/clients/Tecme_color-07.png',
-  '/assets/clients/US21-color.png',
-];
-
 const ContactPage = () => {
   const [formData, setFormData] = useState({});
 
@@ -193,15 +180,6 @@ const ContactPage = () => {
                 )}
               </div>
             </form>
-          </div>
-        </div>
-
-        <div className="ContactPage__Clients">
-          <h2 className="ContactPage__Clients__Title">Clientes</h2>
-          <div className="ContactPage__Clients__Images">
-            {CLIENTS.map((imageSrc, i) => (
-              <img src={imageSrc} key={i} />
-            ))}
           </div>
         </div>
       </div>

@@ -171,8 +171,8 @@
 .AboutUs__AnimationContainer {
   font-size: 48px;
   font-weight: bold;
-  padding: 20px;
-  text-align: center;
+  padding: 30px 0;
+  text-align: left;
 }
 
 .AboutUs__AnimationContainer span {
@@ -181,6 +181,18 @@
 
 .AboutUs__AnimationContainer span:nth-child(odd) {
   animation: 5s infinite aboutus-animation;
+}
+
+.Clients__Images {
+  display: flex;
+  flex-direction: column;
+}
+
+.Clients__Images > img {
+  width: 50%;
+  max-height: 120px;
+  object-fit: contain;
+  margin: 20px auto;
 }
 
 .Home__Content .AboutUs__Content,
@@ -214,7 +226,7 @@
 /* TEXT */
 
 .Home__Content .AboutUs__Text {
-  margin: 0 auto;
+  margin: 0 auto 0 15px;
   font-size: 2.5rem;
   line-height: 2.4rem;
   color: #2a2c2e;
@@ -380,6 +392,31 @@
 }
 
 /* MEDIA QUERY */
+
+@media (min-width: 768px) {
+  .Clients__Images {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .Clients__Images > img {
+    width: 18%;
+    padding: 10px 20px;
+    max-height: 120px;
+    object-fit: contain;
+    margin: 20px auto;
+    filter: grayscale(100%) brightness(150%);
+    -webkit-filter: grayscale(100%) brightness(150%);
+    transition: filter 0.3s ease-in-out, -webkit-filter 0.3s ease-in-out;
+  }
+
+  .Clients__Images > img:hover {
+    filter: grayscale(0) brightness(200%);
+    -webkit-filter: grayscale(0) brightness(200%);
+  }
+}
 
 @media (min-width: 992px) {
   .Home__Content > div {

@@ -29,13 +29,9 @@ const AboutUs = () => {
   return (
     <div className="AboutUs AboutUs__Container">
       <div className="AboutUs__AnimationContainer">
-        <span>.</span>
-        <span>:</span>
-        <span>.</span>
-        <span>:</span>
-        <span>.</span>
-        <span>:</span>
-        <span>.</span>
+        <span>></span>
+        <span>></span>
+        <span>></span>
       </div>
       <div className="AboutUs__Content">
         <div className="AboutUs__Text">{aboutUsSectionData.text}</div>
