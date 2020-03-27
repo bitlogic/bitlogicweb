@@ -226,8 +226,8 @@
 /* TEXT */
 
 .Home__Content .AboutUs__Text {
-  margin: 0 auto 0 15px;
-  font-size: 2.5rem;
+  margin: 0 auto 0 0;
+  font-size: 2.4rem;
   line-height: 2.4rem;
   color: #2a2c2e;
   font-weight: bolder;
@@ -394,6 +394,11 @@
 /* MEDIA QUERY */
 
 @media (min-width: 768px) {
+  .Home__Content .AboutUs__Text {
+    margin: 0 auto 0 15px;
+    font-size: 2.5rem;
+  }
+
   .Clients__Images {
     display: flex;
     flex-direction: row;
