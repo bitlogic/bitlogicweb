@@ -171,14 +171,16 @@
 }
 
 .textoSlider {
+  font-size: 30px;
   font-weight: 500;
   display: flex;
   flex-wrap: wrap;
   margin-right: 15px;
-  margin-left: 50px;
+  margin-left: 15px;
   align-content: flex-end;
   color: white;
   padding-bottom: 50px;
+  width: calc(100% - 30px);
 }
 
 .textoSlider span {
@@ -196,6 +198,8 @@
   .textoSlider {
     font-size: 40px;
     width: 400px;
+    margin-right: 15px;
+    margin-left: 50px;
   }
 }
 
@@ -236,10 +240,5 @@
     grid-gap: 10px;
     grid-auto-rows: minmax(auto, auto);
     padding: 0 30px;
-  }
-
-  .textoSlider {
-    font-size: 30px;
-    width: 350px;
   }
 }

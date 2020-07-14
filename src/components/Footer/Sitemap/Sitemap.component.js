@@ -13,7 +13,7 @@ const SITEMAP_ITEMS = [
   },
   {
     label: 'Bitway',
-    to: '/',
+    to: '/culture',
   },
   // {
   //   label: 'Project',
