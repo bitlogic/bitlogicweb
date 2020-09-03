@@ -9,6 +9,7 @@ const PHOTOS = [
   '/assets/photos/bitlogic_photo_6.jpg',
   '/assets/photos/bitlogic_photo_7.jpg',
   '/assets/photos/bitlogic_photo_8.jpg',
+  '/assets/photos/bitlogic_photo_13.jpg',
 ];
 
 const AboutUsPage = () => {
