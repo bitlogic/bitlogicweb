@@ -5,11 +5,11 @@ import SEO from '../seo';
 import './AboutUsPage.css';
 
 const PHOTOS = [
-  '/assets/photos/bitlogic_photo_9.jpg',
   '/assets/photos/bitlogic_photo_14.jpg',
+  '/assets/photos/bitlogic_photo_16.jpg',
+  '/assets/photos/bitlogic_photo_9.jpg',
   '/assets/photos/bitlogic_photo_7.jpg',
   '/assets/photos/bitlogic_photo_8.jpg',
-  '/assets/photos/bitlogic_photo_15.jpg',
   '/assets/photos/bitlogic_photo_13.jpg',
 ];
 
