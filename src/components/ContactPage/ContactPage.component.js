@@ -45,10 +45,7 @@ const ContactPage = () => {
       <div className="ContactPage__Content">
         <div className="ContactPage__FormContainer">
           <div className="ContactPage__LeftContent">
-            <h2 className="ContactPage__Subtitle">{contactPageData.title}</h2>
-            <div className="ContactPage__Description">
-              {contactPageData.description}
-            </div>
+            <img src="../assets/contact.png"></img>
           </div>
 
           <div className="ContactPage__RightContent">

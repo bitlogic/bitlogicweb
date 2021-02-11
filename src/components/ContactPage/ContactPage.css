@@ -18,6 +18,10 @@
   margin-bottom: 35px;
 }
 
+.ContactPage__LeftContent img {
+  width: 350px;
+}
+
 .ContactPage__Title {
   font-family: 'Montserrat', sans-serif;
   font-size: 75px;
