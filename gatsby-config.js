@@ -99,5 +99,13 @@ module.exports = {
         //routeChangeEventName: "YOUR_ROUTE_CHANGE_EVENT_NAME",
       },
     },
+    {
+      resolve: 'gatsby-plugin-hubspot',
+      options: {
+        trackingCode: '8668423',
+        respectDNT: true,
+        productionOnly: true,
+      },
+    },
   ],
 };
